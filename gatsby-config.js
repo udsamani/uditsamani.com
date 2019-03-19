@@ -1,9 +1,11 @@
 const config = require('./data/SiteConfig')
+const urljoin = require('url-join')
 
 
 module.exports = {
+    pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
     siteMetadata:{
-        title: "Udit Samani",
+        siteUrl: urljoin(config.siteUrl, config.pathPrefix),
     },
     plugins: [
         'gatsby-plugin-sass',
