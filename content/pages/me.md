@@ -22,3 +22,15 @@ The songs on my playlist at present.
 
 - [Shallow - Bradely Cooper, Lady Gaga](https://www.youtube.com/watch?v=bo_efYhYU2A) - A Star is Born
 - [Teri Mitti - Manoj Muntashir](https://www.youtube.com/watch?v=wF_B_aagLfI) - Kesari
+- [Jeet](https://www.youtube.com/watch?v=97NWNz9kgxU&list=RD97NWNz9kgxU&start_radio=1) - Ritviz
+- [All of Me](https://www.youtube.com/watch?v=450p7goxZqg) - John Legend
+- [Let Her Go](https://www.youtube.com/watch?v=450p7goxZqg) - Passenger
+- [Kabira](https://www.youtube.com/watch?v=jHNNMj5bNQw) - Rekha Bhardwaj, Tochi Raina
+
+## Currently Using
+
+- **Cmputer:** MacoBook Pro 2017 (No Touch Bar)
+- **Hosting:** [Netlify](https://netlify.com)
+- **Editor:** [Atom](https://atom.io)
+- **Staic Site Generator:** [Gatsby](https://gatsbyjs.org)
+- **Notes:** [Pocket List 2](https://pocketlists.com)
