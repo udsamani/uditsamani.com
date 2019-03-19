@@ -57,5 +57,18 @@ module.exports = {
         `gatsby-transformer-sharp`,
         'gatsby-plugin-catch-links',
         'gatsby-plugin-sitemap',
-    ]
+    {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+        plugins: [
+        {
+            resolve: `gatsby-remark-katex`,
+            options: {
+            strict: `ignore`
+          }
+        }
+      ],
+    },
+   },
+ ]
 }

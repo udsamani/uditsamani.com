@@ -6,6 +6,7 @@ import PostTags from '../components/PostTags'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
 import { formatDate, editOnGithub } from '../utils/global'
+import 'katex/dist/katex.min.css'
 
 class PostTemplate extends Component {
   render() {

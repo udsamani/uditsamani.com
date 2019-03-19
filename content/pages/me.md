@@ -29,7 +29,7 @@ The songs on my playlist at present.
 
 ## Currently Using
 
-- **Cmputer:** MacoBook Pro 2017 (No Touch Bar)
+- **Computer:** MacoBook Pro 2017 (No Touch Bar)
 - **Hosting:** [Netlify](https://netlify.com)
 - **Editor:** [Atom](https://atom.io)
 - **Staic Site Generator:** [Gatsby](https://gatsbyjs.org)
