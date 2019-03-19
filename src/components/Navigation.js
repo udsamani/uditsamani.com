@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import ThemeContext from '../context/ThemeContext'
 import hp from '../images/hp.svg'
 import cv from '../images/cv.svg'
+import sun from '../images/sun.svg'
+import moon from '../images/moon.svg'
 
 
 class Navigation extends React.Component {
 
+    static contextType = ThemeContext
     //Set up the state of Navigation Component
     state = {
         scrolled: false
@@ -36,32 +40,50 @@ class Navigation extends React.Component {
       render() {
           const { scrolled } = this.state
           const { menuLinks } = this.props
-          console.log(menuLinks)
+          const { dark, toggleDark, setFound} = this.context
+          console.log(toggleDark)
+          console.log(dark)
+          console.log(setFound)
 
           return(
-              <nav className = {scrolled ? 'nav scroll' : 'nav'}>
-                <div className = 'nav-container'>
-                    <div className = 'brand'>
-                        <Link to='/'>
-                            <img src={hp} className='favicon'/>{' '}
-                            <span className='text'>Udit Samani</span>
-                        </Link>
-                    </div>
-                    <div className='links'>
-                        {menuLinks.map(link => (
-                            <Link key={link.name} to={link.link}>
-                                {link.name}
-                            </Link>
-                        ))}
-                    </div>
-                    <div className='cta'>
-                        <a className='donate-button' href='/' target ='_blank'>
-                            <span className='text'>Resume</span>
-                            <img src={cv} className='coffee-icon'/>
-                        </a>
-                    </div>
-                </div>
-              </nav>
+              <ThemeContext.Consumer>
+                {value => (
+                      <nav className = {scrolled ? 'nav scroll' : 'nav'}>
+                        <div className = 'nav-container'>
+                            <div className = 'brand'>
+                                <Link to='/'>
+                                    <img src={hp} className='favicon'/>{' '}
+                                    <span className='text'>Udit Samani</span>
+                                </Link>
+                            </div>
+                            <div className='links'>
+                                {menuLinks.map(link => (
+                                    <Link key={link.name} to={link.link}>
+                                        {link.name}
+                                    </Link>
+                                ))}
+                            </div>
+                            <div className='cta'>
+                                <button className='dark-switcher' onClick={value.toggleDark}>
+                                    {value.dark ? (
+                                        <span>
+                                            <img src={sun} className='theme-icon'/>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            <img src={moon} className='theme-icon'/>
+                                        </span>
+                                    )}
+                                </button>
+                                <a className='donate-button' href='/' target ='_blank'>
+                                    <span className='text'>Resume</span>
+                                    <img src={cv} className='coffee-icon'/>
+                                </a>
+                            </div>
+                        </div>
+                      </nav>
+                )}
+            </ThemeContext.Consumer>
           )
       }
 }

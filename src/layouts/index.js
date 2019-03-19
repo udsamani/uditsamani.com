@@ -5,14 +5,24 @@ import config from '../../data/SiteConfig'
 import hp from '../images/hp.png'
 import Helmet from 'react-helmet'
 import '../styles/main.scss'
+import ThemeContext from '../context/ThemeContext'
 
+
+//TO DO : Theme Context , Helmet BodyAttributes
 class BasicLayout extends Component {
+    static contextType = ThemeContext
 
     render(){
+        const { dark, notFound, setFound } = this.context
         const { children } = this.props;
+        console.log(setFound)
         return(
             <>
-                <Helmet>
+                <Helmet
+                    bodyAttributes={{
+                        class: `theme ${dark && !notFound ? 'dark' : '' || notFound ? 'not-found' : ''}`,
+                    }}
+                >
                     <meta name='description' content={config.siteDescription}/>
                     <link rel='shortcut icon' type='image/png' href={hp}/>
                 </Helmet>
