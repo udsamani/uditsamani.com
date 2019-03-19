@@ -10,7 +10,7 @@ A few highlights:
 - [Naive Bayes Algorithm](/naive-bayes/), describing its application with adequate description of theory.
 - Explaining [Hypothesis Testing](/hypothesis-testing/) for Data Analysis.
 
-I started this website as a place to document everything related Artificial Intelligence. Being a student I have faced so many challenges while learning AI concepts. The articles writted by variety of people on platforms like [Medium](https://medium.com/) have been really helpful to me. But now it is my turn to give back to this AI community. **KUDOS!**
+I started this website as a place to document everything related to Artificial Intelligence. Being a student I have faced so many challenges while learning AI concepts. The articles written by variety of people on platforms like [Medium](https://medium.com/) have been really helpful to me. But now it is my turn to give back to this AI community. **KUDOS!**
 
 ### Some things I like
 
