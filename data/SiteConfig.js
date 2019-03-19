@@ -29,4 +29,4 @@ const config = {
     backgroundColor: '#ffffff'
 }
 
-export default config 
+module.exports = config

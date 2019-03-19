@@ -19,7 +19,7 @@ class Navigation extends React.Component {
       bar in CSS file. If the page is scrolled, the
       navigation bar sticks to the top of page.*/
       navigationOnScroll = () => {
-          if(window.scrollY > 20) {
+          if(window.scrollY > 10) {
               this.setState({scrolled: true})
           } else {
               this.setState({ scrolled: false})
@@ -28,23 +28,22 @@ class Navigation extends React.Component {
 
       //Component life cycle function to add scroll event listener
       componentDidMount() {
-          window.addEventListener('scroll', this.navOnScroll)
+          window.addEventListener('scroll', this.navigationOnScroll)
       }
 
       //Component life cycle function to remove scroll even listener
+      /*
       componentWillUmount() {
           window.removeEventListener('scroll', this.navOnScroll)
       }
+      */
 
       //Rendering JSX
       render() {
           const { scrolled } = this.state
           const { menuLinks } = this.props
           const { dark, toggleDark, setFound} = this.context
-          console.log(toggleDark)
-          console.log(dark)
-          console.log(setFound)
-
+          
           return(
               <ThemeContext.Consumer>
                 {value => (
