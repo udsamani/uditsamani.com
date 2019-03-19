@@ -45,24 +45,21 @@ export default BlogPage
 
 export const pageQuery = graphql `
     query BlogQuery {
-        categories: allMarkdownRemark(limit:2000) {
-            group(field:frontmatter___categories) {
-                fieldValue
-                totalCount
-            }
-        }
+        
         posts: allMarkdownRemark(limit:2000, sort:{fields:frontmatter___date, order:DESC}){
            edges{
              node{
+                 fields {
+                     slug
+                     date
+                 }
                frontmatter {
                  title
-                 slug
-                 date
                  tags
                  thumbnail {
                    childImageSharp {
                      fixed(width:150, height:150) {
-                       tracedSVG
+                       ...GatsbyImageSharpFixed
                      }
                    }
                  }
@@ -73,6 +70,13 @@ export const pageQuery = graphql `
              }
            }
        }
+
+        categories: allMarkdownRemark(limit:2000) {
+            group(field:frontmatter___categories) {
+                fieldValue
+                totalCount
+            }
+        }
 
 
     }

@@ -9,11 +9,11 @@ class PostListing extends Component {
             .filter(postEdge => postEdge.node.frontmatter.template === 'post')
             .map(postEdge => {
                 return {
-                    path: postEdge.node.slug,
+                    path: postEdge.node.fields.slug,
                     tags: postEdge.node.frontmatter.tags,
                     thumbnail: postEdge.node.frontmatter.thumbnail,
                     title: postEdge.node.frontmatter.title,
-                    date: postEdge.node.frontmatter.date,
+                    date: postEdge.node.fields.date,
                     excerpt: postEdge.node.excerpt,
                     timeToRead: postEdge.node.timeToRead
                 }

@@ -80,8 +80,11 @@ export const pageQuery = graphql`
       	) {
         edges {
           node {
+              fields{
+                  slug
+                  date
+              }
             frontmatter{
-              slug
               title
               tags
               template
@@ -92,6 +95,7 @@ export const pageQuery = graphql`
                   }
                 }
               }
+              date
             }
             timeToRead
             excerpt
