@@ -1,3 +1,16 @@
-import React from "react"
+import React from 'react'
+import '../styles/main.scss'
+import Layout from '../layouts'
 
-export default () => <div>Hello world!</div>
+
+
+class Index extends React.Component {
+    render(){
+        return(
+            <Layout>
+            </Layout>
+        );
+    }
+};
+
+export default Index

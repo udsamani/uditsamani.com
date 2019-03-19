@@ -1,0 +1,93 @@
+/* Buttons
+  =============== */
+
+// Main button styling
+%buttons {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: $button-border-width $button-border-style $button-border-color;
+  border-radius: $button-border-radius;
+  background: $button-background;
+  color: $button-color;
+  font-weight: $button-font-weight;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  padding: 0.6rem 0.9rem;
+  margin: 0 0 0.5rem 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+// Buttons on hover
+%buttons-hover {
+  border: $button-border-width $button-border-style darken($button-border-color, 10%);
+  color: darken($button-border-color, 30%);
+  background: $button-background-hover;
+  text-decoration: none;
+}
+
+// Buttons on focus
+%buttons-focus {
+  border: $button-border-width $button-border-style darken($button-border-color, 10%);
+  background: darken($button-color, 10%);
+  color: white;
+  text-decoration: none;
+}
+
+// Apply styles to .button class, button element, and button-based inputs
+#{$buttons} {
+  @extend %buttons;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  &:hover {
+    @extend %buttons-hover;
+  }
+  &:focus,
+  &:active {
+    @extend %buttons-focus;
+  }
+}
+
+.button.muted-button,
+a.button.muted-bottom {
+  color: darken($border-color, 30%);
+  border: 2px solid $border-color;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid darken($border-color, 10%);
+    background: lighten($border-color, 15%);
+    color: darken($border-color, 40%);
+  }
+}
+
+// Secondary button color
+.donate-button,
+a.donate-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: $border-radius;
+  border: 2px solid $yellow;
+  background: lighten($yellow, 32%);
+  padding: 0.75rem 1rem;
+  color: #333;
+  &:hover,
+  &:focus,
+  &:active {
+    background: lighten($yellow, 26%);
+    border: 2px solid darken($yellow, 10%);
+    color: #111;
+  }
+}
+
+@include small-breakpoint {
+  #{$buttons} {
+    padding: 0.75rem 1.25rem;
+  }
+}
