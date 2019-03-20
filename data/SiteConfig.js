@@ -21,8 +21,8 @@ const config = {
             link:'/blog/'
         },
         {
-            name: 'Newsletter',
-            link:'/newsletter/'
+            name: 'Portfolio',
+            link:'/portfolio/'
         },
     ],
     themeColor: '#3F80FF',

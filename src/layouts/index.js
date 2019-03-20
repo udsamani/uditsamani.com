@@ -6,6 +6,7 @@ import hp from '../images/hp.png'
 import Helmet from 'react-helmet'
 import '../styles/main.scss'
 import ThemeContext from '../context/ThemeContext'
+import 'semantic-ui-css/semantic.min.css';
 
 
 //TO DO : Theme Context , Helmet BodyAttributes
