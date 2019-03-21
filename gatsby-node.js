@@ -140,12 +140,15 @@ exports.createPages = ({ graphql, actions }) => {
               tagSet.add(tag)
             })
           }
+          console.log(tagSet)
 
           if (edge.node.frontmatter.categories) {
             edge.node.frontmatter.categories.forEach(category => {
               categorySet.add(category)
             })
           }
+
+          console.log(categorySet)
 
           if (edge.node.frontmatter.template === 'post') {
             createPage({

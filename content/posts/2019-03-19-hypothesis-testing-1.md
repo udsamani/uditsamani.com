@@ -1,23 +1,26 @@
 ---
-data: 2019-03-19
-title: 'Understanding Hypothesis Testing - I'
+date: 2019-03-19
+title: "Understanding Hypothesis Testing - I"
 template: post
-thumbnail: '../thumbnails/hypothesis.png'
-slug: 'hypothesis-testing-1'
+thumbnail: "../thumbnails/hypothesis.png"
+slug: "hypothesis-testing-1"
 categories:
-    - Probability
-    - Theory
+  - Probability
+  - Theory
 tags:
-    - probability
-    - data analytics
+  - probability
+  - data analytics
 ---
-I don't know about you but for me understanding **hypothesis testing** had always been difficult. The certain concepts of hypothesis testing like p-value, alternative hypothesis always confused me. This is my try to make you all understand hypothesis testing in  the most simplest manner.
+
+I don't know about you but for me understanding **hypothesis testing** had always been difficult. The certain concepts of hypothesis testing like p-value, alternative hypothesis always confused me. This is my try to make you all understand hypothesis testing in the most simplest manner.
 
 ### Prerequises
+
 - Basic knowledge of Probability and concpts conditional probability.
 - Knowledge of probability distributions like [Bernoulli](https://en.wikipedia.org/wiki/Bernoulli_distribution).
 
 ### Goals of this Series
+
 - To get a better understanding of hypothesis testing.
 - Understand the concept of **p-value**.
 - Learn what does it mean to reject null Hypothesis
@@ -33,12 +36,12 @@ These testing methods are necessary to make decisions on the basis of limited in
 
 Hypothesis testing can be formulated in terms of two hypotheses.
 
-- $H_0$:  Null hypothesis
-- $H_a$:  Alternative Hypothesis
+- $H_0$: Null hypothesis
+- $H_a$: Alternative Hypothesis
 
 A null hypothesis is a hypothesis where things are happening as expected i.e. there is **no difference**. To elaborate, back to our GSW example our null hypothesis would be that yes all GSW fan are as humble as Stephen Curry (**NO DIFFERENCE**).Trust me, remember this key word and you will never have problem understanding null hypothesis.
 
-Alternative hypothesis on other hand  is a claim where if you have evidence to back up that claim, that would be new news. You are saying hey there is something interesting going on here. **There is a differece**.
+Alternative hypothesis on other hand is a claim where if you have evidence to back up that claim, that would be new news. You are saying hey there is something interesting going on here. **There is a differece**.
 
 ##Outcomes of Hypothesis Testing
 

@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../layouts'
-import PostTags from '../components/PostTags'
-import config from '../../data/SiteConfig'
-import Img from 'gatsby-image'
-import { formatDate, editOnGithub } from '../utils/global'
-import 'katex/dist/katex.min.css'
+import React, { Component } from "react"
+import Helmet from "react-helmet"
+import { graphql } from "gatsby"
+import Layout from "../layouts"
+import PostTags from "../components/PostTags"
+import config from "../../data/SiteConfig"
+import Img from "gatsby-image"
+import { formatDate, editOnGithub } from "../utils/global"
+import "katex/dist/katex.min.css"
 
 class PostTemplate extends Component {
   render() {
@@ -29,6 +29,7 @@ class PostTemplate extends Component {
 
     const date = formatDate(post.date)
     const githubLink = editOnGithub(post)
+    console.log(githubLink)
 
     return (
       <Layout>
@@ -37,12 +38,15 @@ class PostTemplate extends Component {
         </Helmet>
         <article className="single container">
           <header className="single-header">
-            {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
+            {thumbnail ? (
+              <Img fixed={post.thumbnail.childImageSharp.fixed} />
+            ) : (
+              <div />
+            )}
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
-                <time className="date">{date}</time>
-                /
+                <time className="date">{date}</time>/
                 <a className="github-link" href={githubLink} target="_blank">
                   Edit on Github ✏️
                 </a>
@@ -50,7 +54,10 @@ class PostTemplate extends Component {
               <PostTags tags={post.tags} />
             </div>
           </header>
-          <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <div
+            className="post"
+            dangerouslySetInnerHTML={{ __html: postNode.html }}
+          />
         </article>
       </Layout>
     )
