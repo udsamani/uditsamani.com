@@ -12,8 +12,14 @@ In order to create a page for your website, make sure you create a **md** file i
 
 ```aboutme.md
 ---
+title: About me
 template: page
-
 ---
 ```
+
+Everything between --- is front matter. The most important key here is template. Based on on what value you give to template the page renders to that particular format. See I told you it is this easy to create a page. You are done here! Following the front matter write your content like you were writing in some word document. For example this is my [About me](https://www.uditsamani.com/me/) page. 
+
+## Creating a Post page
+
+
 
