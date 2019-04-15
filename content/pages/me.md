@@ -4,6 +4,8 @@ slug: me
 template: page
 ---
 
+
+
 My name is Udit. I am student at **University of Illinois at Urbana-Champaign**. Currently I am in my senior year and happily looking for a job. My main interests include **Machine Learning**, **Data Science**, and **Deep Learning**. In addition, I love writing articles related to Machine Learning.
 
 A few highlights:
