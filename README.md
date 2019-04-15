@@ -6,11 +6,14 @@ Wizard template is an **open source** static site generator template based on [G
 
 ## Creating a Page
 
-In order to understand this section to a full extent please make sure that you have some basic knowledge of markdown template. This section how to create a page for your website using this layout.
+In order to understand this section to a full extent please make sure that you have some basic knowledge of markdown files. This section shows how to create a page for your website using this layout.
 
 In order to create a page for your website, make sure you create a **md** file in **/content/pages** folder. All your pages, posts, etc go in the content folder. If you have no background of coding **content** folder is what you have to look for. The most important thing is to make sure that you enter correct front matter. Suppose you want to create a page named "About me":
 
 ```aboutme.md
-udit
+---
+template: page
+
+---
 ```
 
