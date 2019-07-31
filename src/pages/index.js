@@ -22,7 +22,7 @@ class Index extends React.Component {
 
         return(
             <Layout>
-                <Helmet title={`${config.siteTitle} - Machine Learning, Data Science, writer`}/>
+                <Helmet title={`${config.siteTitle} - Computer Science Engineer & Traveler`}/>
                 <div className='container'>
                     <div className='lead'>
                         <h1>
@@ -32,9 +32,8 @@ class Index extends React.Component {
                             I'm  a <strong>student</strong> at  <strong>University of Illinois at Urbana Champaign</strong>.
                              I am pursuing my career in <strong>Computer Science</strong> with main focuses in <strong>Machine
                               Learning</strong>, <strong>Data Science</strong>, and <strong>Deep Learning</strong>.
-                              I build open source projects and write articles related to Machine Learning.
-                              I created this site to document everything I learn, and share a bit of
-                              myself with the world. My site has no ads, affiliates, sponsored posts, or paywalls.
+                              I build open source projects and write articles related to Computer Science.
+
                         </p>
                         <Link className='button' to='/me' target='_blank'>
                             About Me
