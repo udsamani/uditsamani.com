@@ -5,6 +5,13 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import config from '../../data/SiteConfig'
 import PostListing from '../components/PostListing'
+import hu from '../images/handsup.svg'
+import ss from '../images/swiftsolution.svg'
+import lu from '../images/loosenup.svg'
+import gh from '../images/gethigh.svg'
+import time from '../images/time.svg'
+import cl from '../images/checklist.svg'
+
 
 
 
@@ -43,17 +50,21 @@ class Index extends React.Component {
                 <section className='note'>
                     <div className='container note-container'>
                         <h3> Updates</h3>
+                        <img src = {hu}/>
+                        <img src = {ss}/>
+                        <img src = {gh}/>
+                        <img src = {cl}/>
+                        <img src = {time}/>
+
                         <p>
                             <small>
-                                <em>April 1, 2019</em>
+                                <em>July 30, 2019</em>
                             </small>
                             <br/>
-                            After a long 97 hours, I've finally created my website using Gatsby. Gatsby is
-                            a React/Node.js static site generator. I am in love with the idea of writing my
-                            blog posts with markdown files. The already defined templates in JavaScript just
-                            make it more interactive and good looking. I would personally like to thank <a href=''>Nikita
-                            Nahata</a> for pushing me hard for making my website. This has been long overdue project.
-                            Spring break spent well.
+                            Since I was a kid, I always wanted to design a caricature that speaks to me. Finally
+                            after many hours of thinking and desigining I came up with this caricature. I will be using
+                            this in my articles. It is my belief that if you have a picture of professor in mind then things
+                            are easy to remember or recall. Hope this makes you enjoy reading articles here.
                         </p>
                     </div>
                 </section>
