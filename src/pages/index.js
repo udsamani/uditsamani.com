@@ -54,7 +54,6 @@ class Index extends React.Component {
                         <img src = {ss}/>
                         <img src = {gh}/>
                         <img src = {cl}/>
-                        <img src = {time}/>
 
                         <p>
                             <small>

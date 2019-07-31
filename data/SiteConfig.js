@@ -13,7 +13,7 @@ const config = {
   userLocation: "Urbana, IL",
   menuLinks: [
     {
-      name: "About me",
+      name: "Me",
       link: "/me/",
     },
     {
