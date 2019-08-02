@@ -43,7 +43,7 @@ class Navigation extends React.Component {
           const { scrolled } = this.state
           const { menuLinks } = this.props
           const { dark, toggleDark, setFound} = this.context
-          
+
           return(
               <ThemeContext.Consumer>
                 {value => (
@@ -74,7 +74,7 @@ class Navigation extends React.Component {
                                         </span>
                                     )}
                                 </button>
-                                <a className='donate-button' href='/' target ='_blank'>
+                                <a className='donate-button' href='https://drive.google.com/file/d/1VETapxJGZZuFbXIK2FE_mA-72h-UomQY/view?usp=sharing' target ='_blank'>
                                     <span className='text'>Resume</span>
                                     <img src={cv} className='coffee-icon'/>
                                 </a>

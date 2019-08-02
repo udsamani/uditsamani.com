@@ -41,7 +41,7 @@ class Index extends React.Component {
                         <a className='button' href='https://github.com/udsamani' target='_blank'>
                             GitHub
                         </a>
-                        <a className='button' href='' target='_blank'>
+                        <a className='button' href='https://www.linkedin.com/in/udit-samani-a31765b7/' target='_blank'>
                             LinkedIn
                         </a>
                     </div>

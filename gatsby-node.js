@@ -103,6 +103,7 @@ exports.createPages = ({ graphql, actions }) => {
     const postPage = path.resolve('src/templates/post.js')
     const pagePage = path.resolve('src/templates/page.js')
     const tagPage = path.resolve('src/templates/tag.js')
+    const portfolioPage = path.resolve('src/templates/portfolio.js')
     const categoryPage = path.resolve('src/templates/category.js')
 
     resolve(
@@ -154,6 +155,16 @@ exports.createPages = ({ graphql, actions }) => {
             createPage({
               path: edge.node.fields.slug,
               component: postPage,
+              context: {
+                slug: edge.node.fields.slug,
+              },
+            })
+          }
+
+          if (edge.node.frontmatter.template === 'portfolio') {
+            createPage({
+              path: edge.node.fields.slug,
+              component: portfolioPage,
               context: {
                 slug: edge.node.fields.slug,
               },
