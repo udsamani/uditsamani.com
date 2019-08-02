@@ -75,7 +75,6 @@ class Navigation extends React.Component {
                                     )}
                                 </button>
                                 <a className='donate-button' href='https://drive.google.com/file/d/1VETapxJGZZuFbXIK2FE_mA-72h-UomQY/view?usp=sharing' target ='_blank'>
-                                    <span className='text'>Resume</span>
                                     <img src={cv} className='coffee-icon'/>
                                 </a>
                             </div>

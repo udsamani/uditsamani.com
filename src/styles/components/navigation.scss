@@ -37,8 +37,9 @@
     .links {
       display: flex;
       flex-direction: row;
-      flex: 1;
+      flex: 1 1;
       justify-content: space-around;
+      margin: 0;
       a {
         border-radius: $border-radius;
         display: flex;

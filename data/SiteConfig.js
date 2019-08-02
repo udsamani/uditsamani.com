@@ -24,6 +24,10 @@ const config = {
       name: "Portfolio",
       link: "/portfolio/",
     },
+    {
+        name: "Contact",
+        link: "/contact/",
+    }
   ],
   themeColor: "#3F80FF",
   backgroundColor: "#ffffff",

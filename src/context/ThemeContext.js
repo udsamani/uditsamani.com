@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const defaultState = {
-    dark: false,
+    dark: true,
     notFound: false,
     toggleDark: () => {}
 }
