@@ -1,25 +1,22 @@
 import React, { Component } from 'react'
 
 const defaultState = {
-    dark: true,
+    dark: false,
     notFound: false,
     toggleDark: () => {}
 }
 
 const ThemeContext = React.createContext(defaultState)
-const supportsDarkMode = () => window.matchMedia('(prefers-color-scheme: dark)').matches === true
 
 class ThemeProvider extends Component {
 
     state = {
-        dark:true,
+        dark: false,
         notFound: false,
     }
 
     toggleDark = () => {
-        let dark = !this.state.dark
-        localStorage.setItem('dark', JSON.stringify(dark))
-        this.setState({ dark })
+      this.setState(prevState => ({dark: !prevState.dark}))
     }
 
     setNotFound = () => {
@@ -32,6 +29,7 @@ class ThemeProvider extends Component {
 
     componentDidMount() {
         const lsDark = JSON.parse(localStorage.getItem('dark'))
+      
         if (lsDark) {
             this.setState({ dark: lsDark })
         }
@@ -40,7 +38,7 @@ class ThemeProvider extends Component {
     render() {
         const { children } = this.props
         const { dark, notFound } = this.state
-        console.log("Iskal Render")
+      
         return(
             <ThemeContext.Provider
                 value={{
