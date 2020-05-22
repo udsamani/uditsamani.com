@@ -3,10 +3,11 @@
 
 // HTML base
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
-  font-size: 90% !important;
+  font-family: $font-family;
+  font-size: 84% !important;
 }
 
 // Body base
@@ -27,6 +28,7 @@ ul,
 dl,
 table {
   margin: 0 0 1.5rem 0;
+  font-size: 1.15rem;
 }
 
 @include small-breakpoint {
@@ -36,6 +38,7 @@ table {
   dl,
   table {
     margin: 0 0 2rem 0;
+    font-size: 1.25rem;
   }
 }
 
@@ -45,7 +48,12 @@ ul li p {
 
 // Remove extra margin for nested lists
 ul li ul {
-  margin-bottom: 0;
+  padding-left: 1rem;
+  margin: 0;
+
+  li {
+    margin: .25rem 0;
+  }
 }
 
 ol li ol {
@@ -63,6 +71,9 @@ h5 {
   font-family: $heading-font-family;
   line-height: $heading-line-height;
   color: $heading-font-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   &:not(:first-child) {
     margin: 0 0 1rem 0;
   }
@@ -78,29 +89,37 @@ h3:not(:first-child) {
 // Heading individual styles
 h1 {
   font-size: $h1-mobile;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  code {
+    font-size: $h1-mobile !important;
+  }
 }
 
 h2 {
   font-size: $h2-mobile;
-  font-weight: 600;
-  border-bottom: 2px solid lighten($border-color, 12%);
-  padding-bottom: 0.5rem;
+  font-weight: 700;
+  padding-bottom: 0.2rem;
+  code {
+    font-size: $h2-mobile !important;
+  }
 }
 
 h3 {
   font-size: $h3-mobile;
-  font-weight: 500;
+  font-weight: 700;
+  color: lighten($heading-font-color, 20%);
 }
 
 h4 {
   font-size: $h4-mobile;
-  font-weight: 600;
+  font-weight: 700;
+  color: lighten($heading-font-color, 40%);
 }
 
 h5 {
   font-size: $h5-mobile;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 @include small-breakpoint {
@@ -110,27 +129,45 @@ h5 {
   h4,
   h5 {
     margin: 0 0 2rem 0;
+
     &:not(:first-child) {
       margin: 0 0 1.5rem 0;
     }
   }
+
   h1:not(:first-child),
   h2:not(:first-child),
   h3:not(:first-child) {
+    margin-top: 4.5rem;
+  }
+
+  h4:not(:first-child) {
     margin-top: 3.5rem;
-  } // Heading desktop individual styles
+  }
+
+  // Heading desktop individual styles
   h1 {
     font-size: $h1;
+    code {
+      font-size: $h1 !important;
+    }
   }
+
   h2 {
     font-size: $h2;
+    code {
+      font-size: $h2 !important;
+    }
   }
+
   h3 {
     font-size: $h3;
   }
+
   h4 {
     font-size: $h4;
   }
+
   h5 {
     font-size: $h5;
   }
@@ -138,20 +175,30 @@ h5 {
 
 ul {
   padding: 0;
+
   li {
+    &.task-list-item {
+      padding-left: 0;
+      margin-left: 0;
+      &:before {
+        content: '';
+      }
+    }
+
     &:before {
       content: '\2022 ';
       position: absolute;
       left: 0;
-      color: $secondary-color;
+      color: lighten($font-color, 30%);
       font-size: 22px;
       line-height: 1.1;
     }
+
     position: relative;
     list-style-type: none;
     margin-bottom: 0.3rem;
     padding-left: 1.5rem;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -168,7 +215,8 @@ ul {
 a {
   color: $link-color;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+
   &:hover,
   &:active,
   &:focus {
@@ -176,17 +224,23 @@ a {
   }
 }
 
+.lead,
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
-    &:hover,
+    padding: 1px 2px;
+    border-radius: 4px;
+    &:hover {
+      background: $link-hover-color;
+      color: $primary-hover;
+    }
     &:active,
     &:focus {
-      border-radius: $border-radius;
-      color: $link-hover-color;
-      background: $button-background-hover;
+      background: darken($link-hover-color, 10%);
+      color: $primary-hover;
     }
   }
+
   img {
     max-width: 100%;
     height: auto;
@@ -204,20 +258,9 @@ b {
   font-weight: 600;
 }
 
-// Keyboard input
-kbd {
-  background-color: #f7f7f7;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-  color: #333;
-  display: inline-block;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 0 0.1em;
-  padding: 0.1em 0.6em;
-  text-shadow: 0 1px 0 #fff;
+blockquote cite {
+  display: block;
+  text-align: right;
 }
 
 // Line break
@@ -229,9 +272,13 @@ hr {
 
 // Definition list
 dt {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 dd {
   margin-bottom: 0.5rem;
+}
+
+[type='checkbox'] {
+  margin-right: 1rem;
 }

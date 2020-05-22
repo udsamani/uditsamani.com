@@ -7,7 +7,8 @@ table {
   border-spacing: 0;
   width: 100%;
   max-width: 100%;
-  table-layout: fixed;
+  overflow-x: auto;
+  display: block;
 }
 
 // Extra border underneath header
@@ -17,7 +18,7 @@ th {
 
 // Extra border above footer
 tfoot th {
-  border-top: 2px solid $border-color;
+  border-top: 1px solid $border-color;
 }
 
 td {
@@ -27,7 +28,7 @@ td {
 th,
 td {
   text-align: left;
-  padding: .5rem;
+  padding: 0.75rem !important;
   hyphens: auto;
   word-break: break-word;
 }

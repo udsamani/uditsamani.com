@@ -33,6 +33,10 @@
   justify-content: center;
 }
 
+.flex {
+  display: flex;
+}
+
 // Display State
 .show {
   display: block !important;
@@ -62,7 +66,13 @@
   color: darken($yellow, 10%);
 }
 
-// Screen reader text for accessibility
+.crypto {
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Screen reader text fo accessibility
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
