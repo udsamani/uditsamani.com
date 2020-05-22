@@ -65,13 +65,9 @@ class Navigation extends React.Component {
                         title="Toggle Dark Mode"
                       >
                         {theme.dark ? (
-                            <span>
-                                <img src={sun} className='theme-icon'/>
-                            </span>
+                              <img src={sun} className='theme-icon'/>
                         ) : (
-                            <span>
-                                <img src={moon} className='theme-icon'/>
-                            </span>
+                              <img src={moon} className='theme-icon'/>
                         )}
                       </button>
                   </div>
