@@ -9,8 +9,11 @@ const config = {
   dateFromFormat: "YYYY-MM-DD",
   dateFormat: "MMMM Do, YYYY",
   siteDescription: "",
+  googleAnalyticsID: 'UA-167414906-1',
   postDefaultCategoryID: "Machine Learning",
-  userLocation: "Urbana, IL",
+  userName: 'Udit',
+  userEmail: 'uditpsamani@gmail.com',
+  userTwitter: 'uditpsamani',
   menuLinks: [
     {
       name: "Me",
@@ -19,10 +22,6 @@ const config = {
     {
       name: "Articles",
       link: "/blog/",
-    },
-    {
-      name: "Portfolio",
-      link: "/portfolio/",
     },
     {
         name: "Contact",

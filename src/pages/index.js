@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import config from '../../data/SiteConfig'
 import PostListing from '../components/PostListing'
+import SEO from '../components/SEO'
 import hu from '../images/handsup.svg'
 import ss from '../images/swiftsolution.svg'
 import lu from '../images/loosenup.svg'
@@ -24,6 +25,7 @@ class Index extends React.Component {
         return(
             <Layout>
                 <Helmet title={`${config.siteTitle} - Software Engineer`}/>
+                <SEO />
                 <div className='container'>
                     <div className='lead'>
                       <div className='elevator'>
