@@ -1,38 +1,40 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import ThemeContext from '../context/ThemeContext'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import config from '../../data/SiteConfig'
-import hp from '../images/hp.png'
-import Helmet from 'react-helmet'
+import favicon from '../images/hp.png'
 import '../styles/main.scss'
-import ThemeContext from '../context/ThemeContext'
 
+export default class MainLayout extends Component {
+  static contextType = ThemeContext
 
-//TO DO : Theme Context , Helmet BodyAttributes
-class BasicLayout extends Component {
-    static contextType = ThemeContext
-
-    render(){
-        const { dark, notFound, setFound } = this.context
-        const { children } = this.props;
-        console.log(setFound)
-        return(
-            <>
-                <Helmet
-                    bodyAttributes={{
-                        class: `theme ${dark && !notFound ? 'dark' : '' || notFound ? 'not-found' : ''}`,
-                    }}
-                >
-                    <meta name='description' content={config.siteDescription}/>
-                    <link rel='shortcut icon' type='image/png' href={hp}/>
-                </Helmet>
-                <Navigation menuLinks = {config.menuLinks}/>
-                <main id='main-content'>{children}</main>
-                <Footer/>
-            </>
-
-        );
+  render() {
+    const { dark, notFound } = this.context
+    const { children } = this.props
+    let themeClass = ''
+    
+    if (dark && !notFound) {
+      themeClass = 'dark'
+    } else if (notFound) {
+      themeClass = 'not-found'
     }
-}
 
-export default BasicLayout
+    return (
+      <>
+        <Helmet
+          bodyAttributes={{
+            class: `theme ${themeClass}`,
+          }}
+        >
+          <meta name="description" content={config.siteDescription} />
+          <link rel="shortcut icon" type="image/png" href={favicon} />
+        </Helmet>
+        <Navigation menuLinks={config.menuLinks} />
+        <main id="main-content">{children}</main>
+        <Footer />
+      </>
+    )
+  }
+}

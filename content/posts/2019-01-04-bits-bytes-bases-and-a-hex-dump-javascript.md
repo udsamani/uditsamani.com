@@ -6,6 +6,7 @@ thumbnail: '../thumbnails/binary.png'
 slug: bits-bytes-bases-and-a-hex-dump-javascript
 categories:
   - Programming
+  - Popular
 tags:
   - javascript
   - node

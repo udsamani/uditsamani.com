@@ -64,34 +64,66 @@ class Index extends React.Component {
 export default Index
 
 export const pageQuery = graphql`
-    query IndexQuery {
-      latest: allMarkdownRemark(
-        limit:6
-      	sort:{fields:frontmatter___date, order: DESC}
-      	) {
-        edges {
-          node {
-              fields{
-                  slug
-                  date
-              }
-            frontmatter{
-              title
-              tags
-              template
-              thumbnail {
-                childImageSharp {
-                  fixed(width:150, height:150) {
-                    ...GatsbyImageSharpFixed
-                  }
+  query IndexQuery {
+    latest: allMarkdownRemark(
+      limit: 5
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { template: { eq: "post" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            categories
+            thumbnail {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed
                 }
               }
-              date
             }
-            timeToRead
-            excerpt
+            date
+            template
           }
-      	}
         }
+      }
     }
+    popular: allMarkdownRemark(
+      limit: 9
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { categories: { eq: "Popular" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            categories
+            thumbnail {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+            date
+            template
+          }
+        }
+      }
+    }
+  }
 `

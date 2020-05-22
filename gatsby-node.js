@@ -2,6 +2,9 @@ const path = require('path')
 const kebabCase = require('lodash.kebabcase')
 const moment = require('moment')
 const siteConfig = require('./data/SiteConfig')
+const sharp = require('sharp')
+sharp.simd(false)
+sharp.cache(false)
 
 const postNodes = []
 
@@ -196,7 +199,7 @@ exports.createPages = ({ graphql, actions }) => {
         const categoryList = Array.from(categorySet)
         categoryList.forEach(category => {
           createPage({
-            path: `/categories/${kebabCase(category)}/`,
+            path: `/categories/${category.toLowerCase()}/`,
             component: categoryPage,
             context: {
               category,
