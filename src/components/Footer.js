@@ -18,7 +18,7 @@ class Footer extends Component {
                 <Link to="/contact/">Contact</Link>
               </div>
               <div>
-                <a href="https://github.com/taniarascia" title="Open-source on GitHub" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/udsamani" title="Open-source on GitHub" target="_blank" rel="noopener noreferrer">
                   <img
                     src={github}
                     className="footer-img"
