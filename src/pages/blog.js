@@ -62,7 +62,7 @@ export default class BlogPage extends Component {
         <SEO />
         <div className="gradient-section articles">
           <div className="container">
-            <h2 className="text-center">The Missing Instruction Manuals of the Web</h2>
+            <h2 className="text-center">The Instruction Manuals of the Modern Software Technologies</h2>
             <div className="instruction-manuals">
               {manuals.map(manual => (
                 <Link to={manual.url} key={manual.url}>
