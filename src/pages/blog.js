@@ -21,18 +21,11 @@ import cookie from '../../content/thumbnails/cookie.png'
 import json from '../../content/thumbnails/json.png'
 
 const manuals = [
-  { name: 'React', image: react, url: '/getting-started-with-react' },
-  { name: 'Redux', image: redux, url: '/redux-react-guide' },
-  { name: 'Vue', image: vue, url: '/getting-started-with-vue' },
   { name: 'Docker', image: docker, url: '/continuous-integration-pipeline-docker' },
-  { name: 'Node', image: node, url: '/node-express-postgresql-heroku' },
   { name: 'Bash', image: bash, url: '/how-to-create-and-use-bash-scripts' },
-  { name: 'CSS', image: css, url: '/overview-of-css-concepts' },
-  { name: 'MVC', image: mvc, url: '/javascript-mvc-todo-app' },
   { name: 'CLI', image: terminal, url: '/how-to-use-the-command-line-for-apple-macos-and-linux' },
   { name: 'SQL', image: sql, url: '/overview-of-sql-commands-and-pdo-operations' },
   { name: 'Auth', image: cookie, url: '/full-stack-cookies-localstorage-react-express' },
-  { name: 'JSON', image: json, url: '/how-to-use-json-data-with-php-or-javascript' },
 ]
 
 export default class BlogPage extends Component {

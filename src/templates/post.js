@@ -1,14 +1,16 @@
-import React, { Component } from "react"
-import Helmet from "react-helmet"
-import { graphql } from "gatsby"
-import Layout from "../layouts"
-import PostTags from "../components/PostTags"
-import config from "../../data/SiteConfig"
-import Img from "gatsby-image"
-import { formatDate, editOnGithub } from "../utils/global"
-import "katex/dist/katex.min.css"
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
+import Layout from '../layouts'
+import UserInfo from '../components/UserInfo'
+import PostTags from '../components/PostTags'
+import SEO from '../components/SEO'
+import config from '../../data/SiteConfig'
+import { formatDate, editOnGithub } from '../utils/global'
+import udit from '../images/uditcrop.jpg'
 
-class PostTemplate extends Component {
+export default class PostTemplate extends Component {
   render() {
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
@@ -28,43 +30,46 @@ class PostTemplate extends Component {
     }
 
     const date = formatDate(post.date)
-    const githubLink = editOnGithub(post)
-    console.log(githubLink)
+    const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
+      config.siteUrl
+    }/${post.slug}/&via=uditsamani`
 
     return (
       <Layout>
         <Helmet>
           <title>{`${post.title} – ${config.siteTitle}`}</title>
         </Helmet>
+        <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container">
-          <header className="single-header">
-            {thumbnail ? (
-              <Img fixed={post.thumbnail.childImageSharp.fixed} />
-            ) : (
-              <div />
-            )}
+          <header className={`single-header ${!thumbnail ? 'no-thumbnail' : ''}`}>
+            {thumbnail && <Img fixed={post.thumbnail.childImageSharp.fixed} />}
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
+                <Link to="/me">
+                  <img src={udit} className="avatar-small" alt="Udit" />
+                </Link>
                 <time className="date">{date}</time>/
-                <a className="github-link" href={githubLink} target="_blank">
-                  Edit on Github ✏️
+                <a
+                  className="twitter-link"
+                  href={twitterShare}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Share
                 </a>
               </div>
               <PostTags tags={post.tags} />
             </div>
           </header>
-          <div
-            className="post"
-            dangerouslySetInnerHTML={{ __html: postNode.html }}
-          />
+
+          <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </article>
+        <UserInfo config={config} />
       </Layout>
     )
   }
 }
-
-export default PostTemplate
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
