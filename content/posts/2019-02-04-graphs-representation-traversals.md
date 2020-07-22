@@ -1,9 +1,9 @@
 ---
 date: 2019-04-29
-title: 'Graphs: Representation & Traversals'
+title: "Graphs: Representation & Traversals"
 template: post
-thumbnail: '../thumbnails/graph.png'
-slug:
+thumbnail: "../thumbnails/graph.png"
+slug: graph-representation-traversals
 categories:
   - Programming
 
@@ -14,12 +14,13 @@ tags:
 ---
 
 Graph is one of the most commonly used data structure. It consists of a set of vertices, together with a set of unordered pairs of these vertices for an undirected graph or a pair of ordered pairs for a directed graph. Thus as we observe we have two types of graphs:
+
 - Directed graphs
 - Undirected graphs
 
 ## Undirected Graphs
 
-Mathematically defining an undirected graph $G = (V,E)$ is a set of vertices $V$ and a set of edges $E$, where $E \subseteq V\times V$. Moreover, this relation is symmetric and irrfelexive. By symmetric we mean that if an edge $(U,V) \in E$ then $(V,U) \in E$. On other hand, irreflexive means that $(U,U) \notin E$ .i.e. self loops do not exist. It is a common trend of not having self loops. The main reason behind this is that all algorithms  related to graph consider graphs not having self loops. However, if you requirement demands you to have self loops in your graph data structure, you can always have them and make changes to the algorithms accordingly.
+Mathematically defining an undirected graph $G = (V,E)$ is a set of vertices $V$ and a set of edges $E$, where $E \subseteq V\times V$. Moreover, this relation is symmetric and irrfelexive. By symmetric we mean that if an edge $(U,V) \in E$ then $(V,U) \in E$. On other hand, irreflexive means that $(U,U) \notin E$ .i.e. self loops do not exist. It is a common trend of not having self loops. The main reason behind this is that all algorithms related to graph consider graphs not having self loops. However, if you requirement demands you to have self loops in your graph data structure, you can always have them and make changes to the algorithms accordingly.
 
 In an undirected graph a path from vertex $U$ to vertex $V$ is a sequence of distinct vertices $V_1, V_2, ..., V_k$ where $V_1 = U$ and $V_k = V$, also $\{V_i,V_{i+1}\} \in E\text{  ,} \forall\text{ } 1 \leq i \leq k-1$. The length of the path is nothing but the number of edges .i.e $k-1$
 
@@ -28,6 +29,7 @@ Now that we have a basic understanding of what are undirected graphs let us look
 ### Representation
 
 There are two ways of representing graphs :
+
 - Adjacency Matrix
 - Adjacency List
 
@@ -45,6 +47,7 @@ Mathematically defining an undirected graph $G = (V,E)$ is a set of vertices $V$
 Similar to path for undirected graphs we have a directed path for directed graphs. A directed path from $u$ to $v$ is nothing but a sequence of distinct vertices $V_1, V_2, ..., V_k$ where $V_1 = U$ and $V_k = V$, also $\{V_i,V_{i+1}\} \in E\text{  ,} \forall\text{ } 1 \leq i \leq k-1$. The length of the path is nothing but the number of edges .i.e $k-1$.
 
 The representation of directed graphs is similar to undirected graphs. The only difference is that now we no longer have a symmetric relations. Thus in case of adjacency lists we can have to types of adjacency lists:
+
 - $Adj[u]$ is a list of all $v$ such that $\{u,v\} \in E$. Such type of list is called outgoing adjacency list.
 - $Adj[u]$ is a list of all $v$ such that $\{v,u\} \in E$. Such type of list called an incoming adjacency list.
 
@@ -66,6 +69,7 @@ class DirectedGraph
     }
 }
 ```
+
 ## Traversal
 
 All graph algorithms surround this basic idea of how can we visit all vertices of the graph. To get a broader idea we consider the following traverse algorithm:
@@ -97,7 +101,9 @@ traverse(int u)
     }
 }
 ```
+
 The traversal of a graph can be done in two ways:
+
 - Breadth First Search
 - Depth First Search
 
